@@ -117,6 +117,9 @@ module.exports = async () => {
               current: {
                 label: '23.1',
               },
+              "21.11": {
+                banner:'unmaintained'
+              },
               "23.2": {
                 label: '23.2 Beta',
                 banner: 'unreleased',
