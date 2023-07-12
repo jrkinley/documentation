@@ -43,7 +43,7 @@ metadata:
   name: cluster-sample-tls
   // highlight-end
 spec:
-  image: "vectorized/redpanda"
+  image: "redpandadata/redpanda"
   version: "latest"
   replicas: 1
   resources:
@@ -287,7 +287,7 @@ metadata:
 spec:
   containers:
     - name: rpk
-      image: 'vectorized/redpanda:<redpanda-version>'
+      image: 'redpandadata/redpanda:<redpanda-version>'
       command:
         - /bin/bash
         - '-c'
