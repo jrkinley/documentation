@@ -1,0 +1,23 @@
+---
+title: Deprecated Features
+linkRoot: ../../../../
+---
+
+<head>
+    <meta name="title" content="Deprecated Features"/>
+    <meta name="description" content="This guide helps you to identify deprecated features in Redpanda 23.2 and plan necessary upgrades or modifications."/>
+</head>
+
+This guide helps you to identify deprecated features in Redpanda 23.2 and plan necessary upgrades or modifications.
+
+## Deprecated: Cluster and Console custom resources
+
+As of Redpanda version 23.2, the Cluster and Console custom resources are deprecated.
+
+The Cluster custom resource was used to configure and deploy Redpanda clusters and the Console custom resources was used to configure and deploy Redpanda Console.
+
+The Cluster and Console custom resources have been replaced by the new Redpanda custom resource. The Redpanda custom resource provides declarative configuration for the Redpanda Helm chart, which deploys both Redpanda and Redpanda Console. The latest Redpanda Operator passes configurations defined in the custom resources to Helm, which then deploys the Redpanda cluster according to these specifications.
+
+Users should transition away from the deprecated Cluster and Console custom resources in favor of the new Redpanda custom resource. Failure to do so might result in compatibility issues with future versions of Redpanda, limited access to new features and enhancements, and potential security vulnerabilities.
+
+For information about the latest Redpanda Operator and the new Redpanda custom resource, see [Redpanda in Kubernetes](../../../deploy/deployment-option/self-hosted/kubernetes/kubernetes-production-deployment).
