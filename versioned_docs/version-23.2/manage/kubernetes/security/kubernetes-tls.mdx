@@ -333,7 +333,7 @@ If you prefer not to use cert-manager for TLS certificate management, you can ma
         --namespace <namespace>
       ```
 
-    - To include the `ca.crt` file, you must create a generic secret:
+    - To include the `ca.crt` file, you must create an Opaque Secret:
 
       ```bash
       kubectl create secret generic <secret-name> \
@@ -498,7 +498,7 @@ By default, all listeners in Redpanda use the self-signed certificate defined gl
 If you don't want to generate the self-signed certificate, set `tls.certs.default` to `null`.
 :::
 
-Here's an example that configures two certificates: `public-ca-cert` and `private-ca-cert`. The `public-ca-cert` certificate is configured with an [Issuer managed by cert-manager](#use-a-ca-certificate), while the `private-ca-cert` certificate is configured with a [generic Secret](#use-secrets-to-manage-tls-certificates-without-cert-manager) containing the `tls.crt`, `tls.key`, and `ca.crt` files.
+Here's an example that configures two certificates: `public-ca-cert` and `private-ca-cert`. The `public-ca-cert` certificate is configured with an [Issuer managed by cert-manager](#use-a-ca-certificate), while the `private-ca-cert` certificate is configured with an [Opaque Secret](#use-secrets-to-manage-tls-certificates-without-cert-manager) containing the `tls.crt`, `tls.key`, and `ca.crt` files.
 
 The Admin API listener is configured with the `public-ca-cert` certificate, the Kafka API listener is configured with the `private-ca-cert` certificate, and the other listeners are configured with the default self-signed certificate.
 
